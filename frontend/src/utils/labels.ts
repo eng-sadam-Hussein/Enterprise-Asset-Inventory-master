@@ -1,0 +1,12 @@
+import type { AssetCategory, AssetStatus, AssignmentStatus, MaintenanceStatus, Role, StockTxnType } from '../api/types';
+import { ROLE_LABELS as roleLabels } from './permissions';
+export const ASSET_STATUS_LABELS: Record<AssetStatus,string>={AVAILABLE:'Available',ASSIGNED:'Assigned',UNDER_MAINTENANCE:'Under Maintenance',RETIRED:'Retired'};
+export const ASSET_CATEGORY_LABELS: Record<AssetCategory,string>={COMPUTERS:'Computers',LAPTOPS:'Laptops',MONITORS:'Monitors',PRINTERS:'Printers',SERVERS:'Servers',NETWORKING_DEVICES:'Networking Devices',OFFICE_FURNITURE:'Office Furniture'};
+export const MAINTENANCE_STATUS_LABELS: Record<MaintenanceStatus,string>={SCHEDULED:'Scheduled',IN_PROGRESS:'In Progress',COMPLETED:'Completed',CANCELLED:'Cancelled'};
+export const ASSIGNMENT_STATUS_LABELS: Record<AssignmentStatus,string>={ACTIVE:'Active',RETURNED:'Returned'};
+export const ROLE_LABELS: Record<Role,string>=roleLabels;
+export const STOCK_TXN_LABELS: Record<StockTxnType,string>={IN:'Stock In',OUT:'Stock Out'};
+export const ASSET_STATUSES=Object.keys(ASSET_STATUS_LABELS) as AssetStatus[];
+export const ASSET_CATEGORIES=Object.keys(ASSET_CATEGORY_LABELS) as AssetCategory[];
+export const MAINTENANCE_STATUSES=Object.keys(MAINTENANCE_STATUS_LABELS) as MaintenanceStatus[];
+export const ASSIGNMENT_STATUSES=Object.keys(ASSIGNMENT_STATUS_LABELS) as AssignmentStatus[];

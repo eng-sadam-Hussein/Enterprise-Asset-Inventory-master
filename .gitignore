@@ -1,0 +1,32 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Backend
+Backend/target/
+Backend/uploads/
+it/target/
+it/uploads/
+eams-backend/target/
+eams-backend/uploads/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs / build artifacts
+*.log
+*.tsbuildinfo
+frontend/vite.config.d.ts
+
+frontend/vite.config.js

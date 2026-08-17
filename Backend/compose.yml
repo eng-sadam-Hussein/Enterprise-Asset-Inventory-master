@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: nexora-assetops-db
+    environment:
+      POSTGRES_DB: nexora_assetops
+      POSTGRES_USER: nexora
+      POSTGRES_PASSWORD: nexora_dev_2026
+    ports:
+      - "5544:5432"
+    volumes:
+      - nexora_assetops_pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: nexora-assetops-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@nexora.io
+      PGADMIN_DEFAULT_PASSWORD: Nexora@2026
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    volumes:
+      - nexora_assetops_pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  nexora_assetops_pgdata:
+  nexora_assetops_pgadmin_data:
